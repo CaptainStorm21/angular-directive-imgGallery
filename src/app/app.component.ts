@@ -13,8 +13,6 @@ export class AppComponent {
     return Math.abs(this.currentPage - index) < 5;
   }
 
-
-
   /*images storage */
   images = [
     {
