@@ -9,14 +9,16 @@ import {
 })
 export class ClassDirective {
 
- @Input() backgroundColor: string;
+//  @Input() backgroundColor: string;
 
   constructor(private element: ElementRef) {
     console.log('class directive is being used');
     this.element.nativeElement.style.color = 'deeppink';
-    this.element.nativeElement.style.backgroundColor = 'deeppink';
   }
 
+  @Input() set backgroundColor (color: string) {
+    this.element.nativeElement.style.backgroundColor = color;
+  }
 
 }
 
