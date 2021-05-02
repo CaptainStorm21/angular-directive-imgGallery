@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  currentPage = 0;
+  currentPage = 3;
+
+
+
   images = [
     {
       title: 'Landscape',
@@ -33,5 +36,7 @@ export class AppComponent {
       title: 'Interior Design',
       url: 'https://www.mickeyshannon.com/images/large/interior-design-for-business.jpg'
     },
-  ]
+  ];
+
+
 }
