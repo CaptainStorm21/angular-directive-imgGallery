@@ -3,9 +3,7 @@
     <div class="w-100 d-flex justify-content-center ">
       <nav aria-label="...">
         <ul class="pagination">
-          <li class="page-item" 
-            appClass 
-            [ngClass]="{disabled: currentPage === 0}">
+          <li class="page-item" [ngClass]="{disabled: currentPage === 0}">
             <a (click)="currentPage=currentPage - 1" class="page-link">
               Prev
             </a>
@@ -17,8 +15,7 @@
               </a>
             </li>
           </ng-container>
-          <li class="page-item" 
-            [ngClass]="{disabled: currentPage === images.length-1}">
+          <li class="page-item" [ngClass]="{disabled: currentPage === images.length-1}">
             <a (click)="currentPage = currentPage + 1" class="page-link">
               Next
             </a>
