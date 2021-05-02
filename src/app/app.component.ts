@@ -8,6 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   currentPage = 0;
+
+  checkWindowIndex( index: number) {
+    return Math.abs(this.currentPage - index) < 5;
+  }
+
+
+
+  /*images storage */
   images = [
     {
       title: 'Landscape',
@@ -32,6 +40,22 @@ export class AppComponent {
     {
       title: 'Interior Design',
       url: 'https://www.mickeyshannon.com/images/large/interior-design-for-business.jpg'
+    },
+    {
+      title: 'Moraine Lake',
+      url: 'https://media.gettyimages.com/photos/lake-moraine-in-banff-national-park-alberta-canada-picture-id480195516?s=2048x2048'
+    },
+    {
+      title: 'Sunset Volcano',
+      url: 'https://media.gettyimages.com/photos/bromo-volcano-at-sunrise-picture-id617723978?s=2048x2048'
+    },
+    {
+      title: 'Indonesia Sky',
+      url: 'https://media.gettyimages.com/photos/sunrise-over-east-java-indonesia-picture-id537852032?s=2048x2048'
+    },
+    {
+      title: 'Mt Taranaki',
+      url: 'https://media.gettyimages.com/photos/mt-taranaki-picture-id1129980085?s=2048x2048'
     },
   ];
 

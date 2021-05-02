@@ -2,44 +2,40 @@
   <div class="w-100 mt-2 p-5 d-flex justify-content-center ">
     <nav aria-label="...">
       <ul class="pagination">
-        <li 
-            class="page-item"
-            [ngClass]="{disabled: currentPage === 0}">
-          <a
-            (click)="currentPage=currentPage - 1"
-            class="page-link"> 
-            Prev 
+        <li class="page-item" [ngClass]="{disabled: currentPage === 0}">
+          <a (click)="currentPage=currentPage - 1" class="page-link">
+            Prev
           </a>
         </li>
-        <li class="page-item" [ngClass]="{ active: i === currentPage }" 
-            *ngFor="let image of images; let i = index;">
-          <a 
-            (click)="currentPage = i"
-            class="page-link" href="#" tabindex="-1"> 
-            {{ i + 1 }} 
-          </a>
-        </li>
+        <ng-container *ngFor="let image of images; let i = index;">
+          <li class="page-item" 
+              [ngClass]="{ active: i === currentPage }" 
+              *ngIf="checkWindowIndex(i)">
+            <a (click)="currentPage = i" 
+                class="page-link" 
+                tabindex="-1">
+                {{ i + 1 }}
+            </a>
+          </li>
+        </ng-container>
         <li class="page-item" 
             [ngClass]="{disabled: currentPage === images.length-1}">
-          <a 
-            (click)="currentPage = currentPage + 1" 
-            class="page-link"> 
-            Next 
+          <a (click)="currentPage = currentPage + 1" class="page-link">
+            Next
           </a>
         </li>
       </ul>
     </nav>
-   </div>
+  </div>
   <!-- images-->
   <div class="d-flex justify-content-center w-100 pb-5">
-  <div class="card w-75">
-    <div class="card-title">
-      <h2 class="card-title text-center"> {{ images[currentPage].title }}</h2>
+    <div class="card w-75">
+      <div class="card-title">
+        <h2 class="card-title text-center"> {{ images[currentPage].title }}</h2>
+      </div>
+      <div class="card-body">
+        <img [src]="images[currentPage].url" class="card-img">
+      </div>
     </div>
-    <div class="card-body">
-      <img [src] = "images[currentPage].url" class="card-img">
-
-    </div> 
-</div>
   </div>
 </div>
