@@ -23,9 +23,20 @@ export class ClassDirective {
   //   this.element.nativeElement.style.backgroundColor = color;
   // }
 
-  @Input('appClass') set backgroundColor (color: string) {
-    this.element.nativeElement.style.backgroundColor = color;
+  // @Input('appClass') set backgroundColor (color: string) {
+  //   this.element.nativeElement.style.backgroundColor = color;
+  // }
+
+  @Input('appClass') set setClassNames(classObj: any) {
+    for (let key in classObj) {
+      if (classObj[key]) {
+        this.element.nativeElement.classList.add(key);
+      } else {
+        this.element.nativeElement.classList.remove(key);
+      }
+    }
   }
+  
 
 }
 

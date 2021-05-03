@@ -5,20 +5,20 @@
         <ul class="pagination">
           <li class="page-item" 
             appClass 
-            [appClass]="{disabled: currentPage === 0}">
+            [ngClass]="{disabled: currentPage === 0}">
             <a (click)="currentPage=currentPage - 1" class="page-link">
               Prev
             </a>
           </li>
           <ng-container *ngFor="let image of images; let i = index;">
-            <li class="page-item" [appClass]="{ active: i === currentPage }" *ngIf="checkWindowIndex(i)">
+            <li class="page-item" [ngClass]="{ active: i === currentPage }" *ngIf="checkWindowIndex(i)">
               <a (click)="currentPage = i" class="page-link" tabindex="-1">
                 {{ i + 1 }}
               </a>
             </li>
           </ng-container>
           <li class="page-item" 
-            [appClass]="{disabled: currentPage === images.length-1}">
+            [ngClass]="{disabled: currentPage === images.length-1}">
             <a (click)="currentPage = currentPage + 1" class="page-link">
               Next
             </a>
@@ -76,7 +76,7 @@
       [appClass]=" 'lightblue' "
       class="text-center"> 
       {{ images[currentPage].title }}</h4>
-
+      
   </div>
       <div class="col-12">
       <img class="card-img"
