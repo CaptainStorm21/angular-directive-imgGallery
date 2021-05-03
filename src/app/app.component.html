@@ -1,11 +1,14 @@
+<ul *appTimes = "5">
+  <li> Hi there</li>
+</ul>
+
+
 <div class="mt-2 ">
   <div class="container-fluid ">
     <div class="w-100 d-flex justify-content-center ">
       <nav aria-label="...">
         <ul class="pagination">
-          <li class="page-item" 
-            appClass 
-            [appClass]="{disabled: currentPage === 0}">
+          <li class="page-item" appClass [appClass]="{disabled: currentPage === 0}">
             <a (click)="currentPage=currentPage - 1" class="page-link">
               Prev
             </a>
@@ -17,8 +20,7 @@
               </a>
             </li>
           </ng-container>
-          <li class="page-item" 
-            [appClass]="{disabled: currentPage === images.length-1}">
+          <li class="page-item" [appClass]="{disabled: currentPage === images.length-1}">
             <a (click)="currentPage = currentPage + 1" class="page-link">
               Next
             </a>
@@ -56,34 +58,31 @@
 
     <div class="w-50 mx-auto">
       <div class="col bg-light">
-      <div class="col-12 p-2" appClass >
-      <!-- <h4 appClass
+        <div class="col-12 p-2" appClass>
+          <!-- <h4 appClass
           [backgroundColor]=" 'blue' "
           class="text-center"> 
           {{ images[currentPage].title }}</h4>
       </div> -->
-      <!-- <h4
+          <!-- <h4
       [appClass]=" 'magenta' "
       class="text-center"> 
       {{ images[currentPage].title }}</h4> -->
 
-      <!-- <h4
+          <!-- <h4
       [appClass]=" 'lightblue' "
       class="text-center"> 
       {{ images[currentPage].title }}</h4> -->
 
-      <h4
-      [appClass]=" 'lightblue' "
-      class="text-center"> 
-      {{ images[currentPage].title }}</h4>
+          <h4 [appClass]=" 'lightblue' " class="text-center">
+            {{ images[currentPage].title }}</h4>
 
-  </div>
-      <div class="col-12">
-      <img class="card-img"
-           [src]="images[currentPage].url" 
-           alt="">
+        </div>
+        <div class="col-12">
+          <img class="card-img" [src]="images[currentPage].url" alt="">
+        </div>
+      </div>
     </div>
   </div>
-  </div>
 </div>
-</div>
+
