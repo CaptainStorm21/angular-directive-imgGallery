@@ -1,3 +1,5 @@
+
+
 <div class="mt-2 ">
   <div class="container-fluid ">
     <div class="w-100 d-flex justify-content-center ">
@@ -8,8 +10,7 @@
               Prev
             </a>
           </li>
-          <!-- <ng-container *ngFor="let image of images; let i = index;"> -->
-            <ng-container *appTimes = "images.length; let i = index">
+          <ng-container *ngFor="let image of images; let i = index;">
             <li class="page-item" [appClass]="{ active: i === currentPage }" *ngIf="checkWindowIndex(i)">
               <a (click)="currentPage = i" class="page-link" tabindex="-1">
                 {{ i + 1 }}
@@ -80,5 +81,9 @@
       </div>
     </div>
   </div>
+  <ul *appTimes = "5">
+    <li> Hi there</li>
+  </ul>
+  
 </div>
 
