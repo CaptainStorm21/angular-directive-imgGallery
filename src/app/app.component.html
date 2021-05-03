@@ -57,11 +57,21 @@
     <div class="w-50 mx-auto">
       <div class="col bg-light">
       <div class="col-12 p-2" appClass >
-      <h4 appClass
+      <!-- <h4 appClass
           [backgroundColor]=" 'blue' "
           class="text-center"> 
           {{ images[currentPage].title }}</h4>
-      </div>
+      </div> -->
+      <!-- <h4
+      [appClass]=" 'magenta' "
+      class="text-center"> 
+      {{ images[currentPage].title }}</h4> -->
+
+      <h4
+      [appClass]=" 'lightblue' "
+      class="text-center"> 
+      {{ images[currentPage].title }}</h4>
+  </div>
       <div class="col-12">
       <img class="card-img"
            [src]="images[currentPage].url" 
